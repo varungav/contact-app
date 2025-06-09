@@ -1,0 +1,70 @@
+.container {
+    display: flex;
+    padding: 160px 0 160px 165px;
+    /* flex-wrap: wrap; allow wrapping for responsiveness */
+}
+
+.separate {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    margin-right: 98px;
+    width: 100%;
+}
+
+.text-content {
+    flex: 1;
+    min-width: 300px;
+    margin-top: 60px;
+}
+
+
+
+.images-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 70px;
+    flex: 1;
+    min-width: 300px;
+}
+
+.title-goes-here {
+    max-width: 245px;
+    text-align: left;
+}
+
+p {
+    color: #5D6970;
+}
+
+.main-head {
+    color: #6F7CB2;
+}
+
+h1 {
+    color: #091133;
+}
+
+/* Medium screens: stack text and images, but keep 2 columns in grid */
+@media (max-width: 992px) {
+    .container {
+        padding: 80px 20px;
+    }
+
+    .separate {
+        flex-direction: column;
+    }
+
+    .images-section {
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+    }
+}
+
+/* Small screens: stack grid items in one column */
+@media (max-width: 768px) {
+    .images-section {
+        grid-template-columns: 1fr;
+    }
+}

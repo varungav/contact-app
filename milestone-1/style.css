@@ -1,0 +1,188 @@
+nav.navbar {
+  position: relative;
+  z-index: 10;
+}
+
+.overlap-img {
+  position: relative;
+  top: -80px; /* this moves the image UP to overlap the navbar */
+  z-index: 5;
+  
+}
+
+/* .content-wrapper {
+  padding-left: 163.12px;
+} */
+
+    html, body {
+      max-width: 100%;
+      overflow-x: hidden;
+      /* font-family: Roboto; */
+font-weight: 400;
+font-size: 18px;
+line-height: 30px;
+letter-spacing: 0px;
+
+      color: #505F98;
+    }
+
+.container-main {
+  position: relative;
+  height: 90vh;
+  /* overflow: hidden; */
+}
+
+.container-main::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url(./designer_1.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: contain;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  z-index: 0;
+}
+
+.container-main > * {
+  position: relative;
+  z-index: 1; /* ensures your text appears above the background */
+}
+
+@media (max-width: 767px) {
+  .container-main::before {
+    opacity: 0.2; /* Reduce background image visibility */
+  }
+}
+
+    .navbar {
+      background-color: transparent !important;
+      box-shadow: none !important;
+    }
+
+    .navbar-nav .nav-link {
+      color: #505F98 !important;
+    }
+
+    .navbar-brand {
+      color: #37447E !important;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      color: #091133;
+    }
+
+    .btn-dark {
+      background-color: #111B47;
+      color: white;
+      border: none;
+    }
+
+    .btn-dark:hover {
+      background-color: #0e163a;
+    }
+
+    .btn-outline-dark {
+      border: 1px solid #111B47;
+      color: #111B47;
+    }
+
+    .btn-outline-dark:hover {
+      background-color: #111B47;
+      color: white;
+    }
+
+    .hero {
+      padding: 100px 0;
+    }
+
+    .feature-section {
+      padding: 80px 0;
+    }
+
+    .pricing {
+      background: #f1f5fd;
+      padding: 100px 0;
+    }
+
+    .footer {
+      background: #f1f5fd;
+      padding: 40px 0;
+    }
+    
+
+@media (max-width: 1000px) {
+  .content-wrapper {
+    padding-left: 15px; /* mobile-friendly */
+  }
+}
+
+
+.containerFooter{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  
+}
+@media (max-width: 796px) {
+  .containerFooter {
+  flex-wrap: wrap;
+  /* justify-content: flex-start; */
+  }
+  .col-md-6 {
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 991px) {
+  .navbar-collapse {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    z-index: 999;
+    padding: 1rem;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+
+    /* Flex layout to split left and right */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .navbar-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* fully left-aligned */
+    margin: 0;
+    padding: 0;
+  }
+
+  .navbar-nav .nav-link {
+    padding: 0.5rem 0;
+    text-align: left;
+    width: 100%;
+  }
+
+  .text-center.text-lg-end {
+    margin-left: auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding-top: 0.25rem;
+  }
+
+  .navbar-toggler {
+    z-index: 1000;
+  }
+
+  .navbar {
+    position: relative;
+  }
+}
+
+
+/* new changes */

@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.custom-toast {
+  margin-bottom: 16.5px !important;
+}

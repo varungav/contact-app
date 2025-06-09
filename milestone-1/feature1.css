@@ -1,0 +1,30 @@
+.container1 {
+    display: flex;
+}
+ .main-content {
+    padding: 160px 0px 160px 240px;
+    max-width: 950px;
+    max-height: 78px;
+ }
+
+.images-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 70px;
+    flex: 1;
+    min-width: 300px;
+}
+
+@media (max-width: 768px) {
+  /* Hide everything except the images-section */
+  .main-content > h1,
+  .main-content > p {
+    display: none;
+  }
+
+
+  .images-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

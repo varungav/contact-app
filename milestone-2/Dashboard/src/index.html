@@ -1,0 +1,324 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Main Heading</title>
+  <link href="./output.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+  <script src="https://cdn.plot.ly/plotly-3.0.1.min.js" charset="utf-8"></script>
+</head>
+
+<body class="font-normal bg-gray-50 transition-colors duration-300 dark:bg-gray-900 dark:text-white">
+
+  <!-- Top Navbar -->
+  <!-- Top Navbar -->
+  <div class="bg-white border-b dark:bg-[#0D0D0D] dark:border-[#242424]">
+    <nav class="flex items-center justify-between px-6 py-4 gap-4 flex-wrap">
+      <!-- Logo -->
+      <div class="h-10 flex items-center flex-shrink-0">
+        <img
+          id="main-logo"
+          src="./logo.png"
+          alt="Logo"
+          data-light="./logo.png"
+          data-dark="./logo_dark.png"
+        />
+      </div>
+
+      <!-- Search Bar -->
+      <div class="searchtab h-[54px] relative hidden sm:flex mr-[30px] flex-1">
+        <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+          <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none"
+            viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M21 21l-4.35-4.35M10 18a8 8 0 100-16 8 8 0 000 16z" />
+          </svg>
+        </div>
+        <input type="text" placeholder="Search..."
+          class="w-full h-full pl-12 pr-4 rounded-md bg-gray-100 dark:bg-[#2D2D2D] dark:text-[#EAEAEA]">
+      </div>
+
+      <!-- Icons - Only visible on large screens -->
+      <div class="hidden lg:flex items-center gap-4 sm:gap-1 flex-shrink-0">
+        <img id="theme-toggle-desktop" src="./theme_change.png" alt="Theme Toggle" class="cursor-pointer mr-6 theme-img" data-light="./theme_change.png"
+  data-dark="./theme_change_dark.png">
+        <img src="./notification.png" alt="Notifications">
+      </div>
+      
+      <!-- Hamburger Menu Button - Always at the right end on mobile -->
+      <button id="menu-toggle" class="block lg:hidden text-gray-700 focus:outline-none dark:text-white">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+          viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </nav>
+  </div>
+
+  <div class="flex h-[calc(100vh-80px)]">
+    <!-- Sidebar -->
+<aside id="sidebar"
+  class="w-[273px] border-r border-[#E8E8E8] bg-white flex flex-col transform transition-transform duration-200 ease-in-out lg:translate-x-0 lg:block hidden absolute z-50 lg:relative h-full dark:bg-[#0D0D0D] dark:text-[#FFFFFF] dark:border-[#242424]">
+
+  <!-- Profile Section -->
+  <div class="h-[112px] flex items-center justify-center px-4">
+    <div class="w-[52px] h-[52px]">
+      <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="avatar" class="rounded-full" />
+    </div>
+    <div class="ml-3">
+      <h3 class="text-lg">Gavano</h3>
+      <p class="text-xs text-[#A7A7A7]">HR Manager</p>
+    </div>
+    <img src="./more-square.png" alt="" class="ml-auto theme-img" data-light="./more-square.png" data-dark="./more-square_dark.png">
+  </div>
+
+  <!-- Navigation Menu -->
+  <ul class="flex flex-col">
+
+    <!-- Dashboard with light mode bg -->
+    <li class="w-[272px] h-[62px] flex items-center pr-5 bg-[#F6F6F6] dark:bg-[#2D2D2DDB] rounded-[4px]">
+      <span class="pl-0 mt-4">
+        <img src="./Side_Menu_Divider.png" alt="">
+      </span>
+      <div class="pl-5"><img src="./dashboard.png" class="mr-3 theme-img" data-light="./dashboard.png" data-dark="./dashboard_dark.png" alt=""></div>
+      <div>  <span class="text-[#5832E6]">Dashboard</span></div>
+    </li>
+
+    <!-- Other menu items -->
+    <li class="pl-[40px] w-[272px] h-[62px] flex items-center px-5">
+      <img src="./finance.png" class="mr-3 theme-img" data-light="./finance.png" data-dark="./finance_dark.png" alt="">
+      <span>Finance</span>
+    </li>
+
+    <li class="pl-[40px] w-[272px] h-[62px] flex items-center px-5">
+      <img src="./employee.png" class="mr-3 theme-img" data-light="./employee.png" data-dark="./employee_dark.png" alt="">
+      <span>Employee</span>
+    </li>
+
+    <li class="pl-[40px] w-[272px] h-[62px] flex items-center px-5">
+      <img src="./company.png" class="mr-3 theme-img" data-light="./company.png" data-dark="./company_dark.png" alt="">
+      <span>Company</span>
+    </li>
+
+    <li class="pl-[40px] w-[272px] h-[62px] flex items-center px-5">
+      <img src="./candidate.png" class="mr-3 theme-img" data-light="./candidate.png" data-dark="./candidate_dark.png" alt="">
+      <span>Candidate</span>
+    </li>
+
+    <li class="pl-[40px] w-[272px] h-[62px] flex items-center px-5">
+      <img src="./Calendar.png" class="mr-3 theme-img" data-light="./Calendar.png" data-dark="./calendar_dark.png" alt="">
+      <span>Calendar</span>
+    </li>
+
+    <!-- Dotted Line -->
+    <li class="w-full border-t border-dotted border-[#A7A7A7] dark:border-[#444] my-2"></li>
+
+    <!-- Profile -->
+    <li class="pl-[40px] w-[272px] h-[62px] flex items-center px-5">
+      <img src="./Profile.png" class="mr-3 theme-img" data-light="./Profile.png" data-dark="./profile_dark.png" alt="">
+      <span>Profile</span>
+    </li>
+
+    <!-- Setting -->
+    <li class="pl-[40px] w-[272px] h-[62px] flex items-center px-5">
+      <img src="./Setting.png" class="mr-3 theme-img" data-light="./Setting.png" data-dark="./setting_dark.png" alt="">
+      <span>Setting</span>
+    </li>
+    
+    <!-- Mobile-only icons that appear in sidebar -->
+    <li class="lg:hidden w-full border-t border-dotted border-[#A7A7A7] dark:border-[#444] my-2"></li>
+    
+    <li class="lg:hidden pl-[40px] w-[272px] h-[62px] flex items-center px-5">
+      <img id="theme-toggle-mobile" src="./theme_change.png" alt="Theme Toggle" class="mr-3 cursor-pointer theme-img" data-light="./theme_change.png" data-dark="./theme_change_dark.png">
+      <span>Theme</span>
+    </li>
+    
+    <li class="lg:hidden pl-[40px] w-[272px] h-[62px] flex items-center px-5">
+      <img src="./notification.png" alt="Notifications" class="mr-3">
+      <span>Notifications</span>
+    </li>
+
+  </ul>
+</aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 bg-[#F8FAFB] p-6 overflow-auto dark:bg-[#181818]">
+      <!-- Your dashboard content (unchanged) -->
+      <!-- Copy your cards, charts, and table here exactly as you posted earlier -->
+      <!-- ... existing dashboard content here ... -->
+      <!-- Your dashboard content here -->
+      <div class="flex flex-row w-full gap-4 flex-wrap">
+        <!-- First Item -->            
+          <div class="flex-1 border bg-white shadow-sm p-2 rounded-lg dark:bg-[#0D0D0D] dark:text-[#EAEAEA] dark:border-[#333333] pb-6">
+          <div class="flex items-center justify-between ml-[32px] mt-[18px] mr-4">
+            <h4 class="text-[#292D32] dark:text-[#EAEAEA]">Total Employees</h4>
+            <div class="bg-[#23C10A26] text-[#0B8A00] text-xs font-semibold px-2 py-1 rounded-full flex items-center gap-1 whitespace-nowrap min-w-fit">
+              <img src="./Vector.png" alt="">
+              10.0%  
+            </div>
+          </div>
+
+            <div class="flex flex-col ml-[32px] mt-1">
+              <h2 class="text-2xl">856</h2>
+              <p class="text-sm text-[#949494]">Employee</p>
+            </div>
+          </div>
+
+         <!-- Second Item -->
+          <div class="flex-1 border bg-white shadow-sm p-2 rounded-lg dark:bg-[#0D0D0D] dark:text-[#EAEAEA] dark:border-[#333333]">
+          <div class="flex items-center justify-between ml-[32px] mt-[18px] mr-4">
+            <h4 class="text-[#292D32] dark:text-[#EAEAEA]">Job View</h4>
+            <div class="bg-[#23C10A26] text-[#0B8A00] text-xs font-semibold px-2 py-1 rounded-full flex items-center gap-1 whitespace-nowrap min-w-fit">
+              <img src="./Vector.png" alt="">
+              22.0%  
+            </div>
+          </div>
+
+            <div class="flex flex-col ml-[32px] mt-1">
+              <h2 class="text-2xl">3,342</h2>
+              <p class="text-sm text-[#949494]">Viewers</p>
+            </div>
+          </div>
+
+        <!-- Third item -->
+          <div class="flex-1  border bg-white shadow-sm p-2 rounded-lg dark:bg-[#0D0D0D] dark:text-[#EAEAEA] dark:border-[#333333]">
+          <div class="flex items-center justify-between ml-[32px] mt-[18px] mr-4">
+            <h4 class="text-[#292D32] dark:text-[#EAEAEA]">Job Applied</h4>
+            <div class="bg-[#23C10A26] text-[#0B8A00] text-xs font-semibold px-2 py-1 rounded-full flex items-center gap-1 whitespace-nowrap min-w-fit">
+              <img src="./Vector.png" alt="">
+              12.0%  
+            </div>
+          </div>
+
+            <div class="flex flex-col ml-[32px] mt-1">
+              <h2 class="text-2xl">77</h2>
+              <p class="text-sm text-[#949494]">Employee</p>
+            </div>
+          </div>
+        <!-- Fourth Item -->
+
+          <div class="flex-1 border bg-white shadow-sm p-2 rounded-lg dark:bg-[#0D0D0D] dark:text-[#EAEAEA] dark:border-[#333333]">
+          <div class="flex items-center justify-between ml-[32px] mt-[18px]">
+            <h4 class="text-[#292D32] dark:text-[#EAEAEA]">Resigned Employees</h4>
+            <div class="bg-[#C10A0A26] text-[#C71026] text-xs font-semibold px-2 py-1 rounded-full flex items-center gap-1 whitespace-nowrap min-w-fit">
+              <img src="./down_vector.png" alt="">
+              7.0%  
+            </div>
+          </div>
+
+            <div class="flex flex-col ml-[32px] mt-1">
+              <h2 class="text-2xl">17</h2>
+              <p class="text-sm text-[#949494]">Employee</p>
+            </div>
+          </div>
+      </div>
+      <!-- Bar Graph Section -->
+      <div class="pt-[25px]">
+        <div id="myDiv">
+      </div>
+
+       </div>
+      
+<div class="flex flex-col lg:flex-row gap-[30px] mt-[20px]">
+  <!-- Employee Status Section -->
+  <div class="flex-1 rounded-lg border border-[#F2EFFF] dark:border-[#0D0D0D] dark:bg-[#0D0D0D]">
+    <div class="p-6">
+      <div class="flex justify-between items-center mb-4">
+        <h3 class="text-base  text-gray-700 dark:text-gray-200">Employee Status</h3>
+        <div class="flex items-center gap-2 bg-[#F6F6F6] px-4 py-3 rounded-full dark:bg-[#2D2D2D] dark:text-[#8894FF]">
+          <p class="hidden sm:inline text-sm">Filter & Sort</p>
+          <img src="./icon-park_setting-config.png" alt="settings" class="w-5 h-5" />
+        </div>
+      </div>
+
+      <!-- Responsive Table Wrapper -->
+      <div class="w-full overflow-x-auto">
+        <table class="min-w-[800px] table-auto w-full border-separate border-spacing-y-5">
+          <thead class="border-b border-gray-300 dark:border-[#FFFFFF]">
+            <tr>
+              <th class="px-4 py-2 text-left text-sm font-semibold text-gray-700 dark:text-[#FFFFFF]">Employee Name</th>
+              <th class="px-4 py-2 text-left text-sm font-semibold text-gray-700 dark:text-[#FFFFFF]">Department</th>
+              <th class="px-4 py-2 text-left text-sm font-semibold text-gray-700 dark:text-[#FFFFFF]">Age</th>
+              <th class="px-4 py-2 text-left text-sm font-semibold text-gray-700 dark:text-[#FFFFFF]">Discipline</th>
+              <th class="px-4 py-2 text-left text-sm font-semibold text-gray-700 dark:text-[#FFFFFF]">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="hover:bg-gray-50 dark:text-[#FFFFFF]">
+              <td class="px-4 py-2 text-sm">
+                <div class="flex items-center gap-2">
+                  <img src="./Employee Image.png" alt="Justin" class="h-[31px] w-[31px] rounded-full object-cover" />
+                  <span>Justin Lipshutz</span>
+                </div>
+              </td>
+              <td class="px-4 py-2 text-sm">Marketing</td>
+              <td class="px-4 py-2 text-sm">22</td>
+              <td class="px-4 py-2 text-sm">+100%</td>
+              <td class="px-4 py-2 text-sm">
+                <span class="inline-block w-[94px] h-[29px] text-center leading-[29px] bg-[#16C09833] text-[#16C098] rounded-sm">Permanent</span>
+              </td>
+            </tr>
+            <tr class="hover:bg-gray-50 dark:text-[#FFFFFF]">
+              <td class="px-4 py-2 text-sm">
+                <div class="flex items-center gap-2">
+                  <img src="./Employee Image (1).png" alt="Marcus" class="h-[31px] w-[31px] rounded-full object-cover" />
+                  <span>Marcus Culhane</span>
+                </div>
+              </td>
+              <td class="px-4 py-2 text-sm">Finance</td>
+              <td class="px-4 py-2 text-sm">24</td>
+              <td class="px-4 py-2 text-sm">+95%</td>
+              <td class="px-4 py-2 text-sm">
+                <span class="inline-block w-[94px] h-[29px] text-center leading-[29px] bg-[#A7A7A733] text-[#5C5C5C] rounded-sm dark:text-[#FFFFFF]">Contract</span>
+              </td>
+            </tr>
+            <tr class="hover:bg-gray-50 dark:text-[#FFFFFF]">
+              <td class="px-4 py-2 text-sm">
+                <div class="flex items-center gap-2">
+                  <img src="./Ellipse 33.png" alt="Leo" class="h-[31px] w-[31px] rounded-full object-cover" />
+                  <span>Leo Stanton</span>
+                </div>
+              </td>
+              <td class="px-4 py-2 text-sm">R&D</td>
+              <td class="px-4 py-2 text-sm">28</td>
+              <td class="px-4 py-2 text-sm">+89%</td>
+              <td class="px-4 py-2 text-sm">
+                <span class="inline-block w-[94px] h-[29px] text-center leading-[29px] bg-[#16C09833] text-[#16C098] rounded-sm">Permanent</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Employee Composition Section -->
+  <div class="flex-1 rounded-lg border border-[#F2EFFF] dark:border-[#1A1A1A] dark:bg-[#0D0D0D]">
+    <div class="flex flex-col items-center p-6">
+      <h3 class="text-lg font-medium mb-4 dark:text-[#FFFFFF]">Employee Composition</h3>
+      <canvas id="myChart" class="w-[172px] h-[172px]"></canvas>
+      <p class="mt-3 text-center text-[16px] leading-[100%] tracking-[0.01em] font-normal font-[Poppins] dark:text-[#A6A6A6]"
+>856 employees total</p>
+    </div>
+  </div>
+</div>
+
+    </main>
+  </div>
+
+  <!-- Sidebar Toggle Script -->
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const sidebar = document.getElementById('sidebar');
+
+    menuToggle.addEventListener('click', () => {
+      sidebar.classList.toggle('hidden');
+    });
+  </script>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>
